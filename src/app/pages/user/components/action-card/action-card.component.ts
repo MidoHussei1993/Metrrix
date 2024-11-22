@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { InboxCard } from '../../types';
+import { IActionCard } from '../../types';
 
 @Component({
   selector: 'app-action-card',
@@ -9,5 +9,5 @@ import { InboxCard } from '../../types';
   styleUrl: './action-card.component.scss'
 })
 export class ActionCardComponent {
-  data  = input.required<InboxCard>()
+  data  = input.required<IActionCard>()
 }

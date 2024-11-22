@@ -17,10 +17,12 @@
 
         <div class="bg-white rounded-[6px]  mb-3 p-2" *ngIf="inboxCardsData.length">
             <div class="py-2 px-3">
-                <h4 class="font-bold text-[15px] text-[--color-blue-700] uppercase ">Actions list</h4>
+                <h4 class="font-bold text-[15px] text-[--color-blue-700] uppercase  ">Actions list</h4>
             </div>
-            <div class="grid lg:grid-cols-2 grid-cols-1">
-             
+            <div class="grid lg:grid-cols-2 grid-cols-1 gap-3">
+                @for (data of actionList; track $index) {
+                    <app-action-card [data]="data"></app-action-card>
+                }
             </div>
         </div>
     </div>
