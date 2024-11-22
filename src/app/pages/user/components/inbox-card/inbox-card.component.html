@@ -1,4 +1,5 @@
-<div class="p-3 bg-[{{data().cardBackgroundColor}}] tasks mb-2 rounded-[6px] mt-3">
+<div class="p-3  tasks mb-2 rounded-[6px] mt-3" 
+[ngClass]="{'bg-[--color-yello-100]': data().cardColor == 'yellow','bg-[--color-light-green-200]': data().cardColor == 'light-green'}">
     <div class="flex justify-between items-center">
         <div class="flex flex-1">
             <div class="inbox-icon text-center mr-3">
@@ -10,7 +11,7 @@
             </div>
         </div>
         <div>
-            <div class="font-bold text-[15px] mt-1 text-[{{data().countColor}}] " data-count="45">{{data().count}}</div>
+            <div class="font-bold text-[15px] mt-1  " [ngClass]="{'text-[--color-yello-400]': data().cardColor == 'yellow','text-[--color-light-green-100]': data().cardColor == 'light-green'}" data-count="45">{{data().count}}</div>
         </div>
     </div>
 </div>

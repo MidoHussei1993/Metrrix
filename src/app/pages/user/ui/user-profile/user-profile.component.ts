@@ -20,16 +20,15 @@ export class UserProfileComponent {
       description: 'you have 15 new tasks',
       img: 'tasks.svg',
       count: 45,
-      countColor: '--color-yello-400',
-      cardBackgroundColor: '--color-yello-100',
+      cardColor: 'yellow' 
     },
     {
-      title: 'My Tasks',
-      description: 'you have 15 new tasks',
+      title: 'collaborations',
+      description: 'you have 04 requests',
       img: 'collaborations.svg',
-      count: 45,
-      countColor: '--color-light-green-100',
-      cardBackgroundColor: '--color-light-green-200',
+      count: 15, 
+      cardColor: 'light-green' 
+
     },
   ];
   actionList: IActionCard[] = [
