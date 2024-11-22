@@ -1,0 +1,98 @@
+@use "../../../../../public/scss/abstract/colors" as *;
+.card {
+  div:first-child {
+    border: none;
+    border-radius: 6px;
+    @apply bg-white;
+  }
+
+  .user-info-card {
+    .card-header {
+      padding: 0px;
+      background-image: url("/images/card-header.png");
+      height: 87px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: top center;
+      position: relative;
+      &::before {
+        background-image: url("/images/carve.svg");
+        background-repeat: no-repeat;
+        height: 50px;
+        position: absolute;
+        bottom: -1px;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0px;
+        right: 0px;
+        content: "";
+        z-index: 9;
+        background-position: bottom center;
+        background-size: contain;
+      }
+      .user-img {
+        height: 100px;
+        width: 100px;
+        border-radius: 180px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        margin: 0 auto;
+        position: relative;
+        z-index: 9;
+        border: 3px solid #ffffff;
+        margin-top: 20px;
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+      }
+    }
+    .user-info {
+      display: block;
+      h6,
+      p {
+        text-align: center;
+      }
+    }
+    .card-links {
+      .custom-btn {
+        border-radius: 4px;
+        color: #ffffff;
+        font-weight: bold;
+        text-transform: uppercase;
+        border: 0px;
+        font-size: 12px;
+        padding: 3px 10px;
+        -webkit-transition: all 200ms ease-in;
+        transition: all 200ms ease-in;
+        &:hover {
+          background-color: var(--color-gray-200);
+        }
+      }
+      .user-icons-link {
+        @apply relative;
+        .badge {
+          border: 2px solid #ffffff;
+          top: -8px;
+          right: -8px;
+          font-size: 10px;
+          font-weight: bold;
+        }
+        .notefications-icon {
+            background-color: #FB760D !important;
+            color: #ffffff;
+            border-radius: 180px;
+            font-size: 11px;
+            right: -8px;
+            position: absolute;
+            top: -7px;
+            height: 18px;
+            width: 18px;
+        }
+      }
+    }
+  }
+}
+ ::ng-deep .p-accordionpanel , ::ng-deep .p-accordioncontent-content, ::ng-deep .p-accordionpanel:first-child > .p-accordionheader {
+    border:none !important;
+ }
+ 
+ 

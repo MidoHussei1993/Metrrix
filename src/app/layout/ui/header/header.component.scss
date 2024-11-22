@@ -1,0 +1,123 @@
+.header {
+  @apply border-t-4 py-[5px] border-[#007bff] border-solid flex items-center justify-between px-[64px] bg-white;
+  .header__start{
+    @apply flex;
+    .header__logo img {
+      @apply max-w-[190px] w-full h-auto;
+    }
+  }
+  .header__search {
+    @apply flex items-center justify-center border-b border-solid border-[#ccc] relative pb-[10px] w-1/3;
+    &::before {
+      @apply content-[""] absolute left-auto right-0 bottom-0 w-0 bg-[#000] h-[1px]  transition-all duration-150 ease-in-out;
+    }
+    &::before:has(input:focus) {
+      @apply content-[""] absolute left-0 right-auto bottom-0 w-full bg-[#000] h-[1px]  transition-all duration-150 ease-in-out;
+    }
+    .header__search__input {
+      @apply px-[12px]  outline-none w-full;
+    }
+    i {
+      @apply cursor-pointer;
+      &:last-child {
+        @apply px-[20px] h-auto;
+      }
+    }
+    .mic__animated {
+      animation: mic 1s ease-in-out infinite both alternate;
+    }
+  }
+  .header__end {
+    ul {
+      @apply flex items-center justify-between gap-[1rem];
+      .header__notifications {
+        @apply relative;
+        .notifications {
+          @apply relative w-[14px] h-[40px];
+          .notifications__count {
+            @apply absolute top-0 left-1/3 w-[18px] h-[18px] rounded-full bg-[#FB760D] text-white text-[11px];
+          }
+        }
+        .header__notifications__menu {
+          @apply absolute bg-white rounded-lg end-0 w-[240px] flex flex-col;
+          .notifications__header {
+            @apply uppercase text-[#384E64] text-[13px] font-bold text-center bg-[#e6ebec] rounded-tl-lg rounded-tr-lg leading-[31px];
+          }
+          .header__notifications__list {
+            @apply flex flex-col items-center justify-center gap-0 list-none;
+            .notification__item {
+              @apply cursor-pointer  w-full;
+              a {
+                @apply flex items-baseline gap-[8px] p-[9.6px] text-[12px] text-[#768791] w-full border-b border-solid border-[#e8e8e8];
+                .notification__msg {
+                  @apply font-bold grow p-0 m-0;
+                }
+                &:hover {
+                  @apply bg-[#f8f9fa];
+                  .notification__msg {
+                    @apply text-[#1F73C8];
+                  }
+                  i#msg-icon {
+                    color: #1F73C8 !important;
+                  }
+                }
+              }
+            }
+          }
+          .notifications__more {
+            @apply text-center py-[8.4px] text-[#4B88BC] text-[12px] font-bold cursor-pointer;
+            &:hover {
+              @apply underline;
+            }
+          }
+        }
+      }
+      .header__user {
+        @apply relative;
+        .header__user__info, .header__user__login {
+          @apply border-e border-solid border-[#B9CDDC] flex gap-[.5rem] items-center pe-[1rem];
+          .header__user__img {
+            @apply cursor-pointer rounded-full h-[36px] w-[36px] border border-solid border-[#384E64] object-cover;
+          }
+          .header__user__name {
+            @apply text-[12px] font-[500] flex items-center gap-[.5rem];
+          }
+        }
+        ul {
+          @apply absolute rounded-[0.25rem] gap-0 top-full flex flex-col bg-white w-full py-[0.5rem] mt-[2px] border border-solid border-[#00000026];
+          li {
+            @apply text-[#768791] text-[12px] w-full cursor-pointer py-[4px] whitespace-nowrap;
+            a {
+              @apply px-[2rem] inline-flex items-center gap-[10px];
+            }
+            &:hover {
+              @apply bg-[#f8f9fa];
+            }
+          }
+          li:last-child {
+            @apply text-[#C4514E];
+          }
+          .divider {
+            @apply border-b border-solid border-[#00000026] w-full my-[0.5rem];
+          }
+        }
+      }
+      .header__translation button {
+        @apply inline-flex items-center gap-[4px] cursor-pointer;
+        .language {
+          @apply text-[13px];
+        }
+      }
+    }
+  }
+}
+
+
+@keyframes mic {
+  from {
+    fill: #212529;
+  }
+  to {
+    fill: #e03a35;
+  }
+}

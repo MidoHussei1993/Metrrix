@@ -1,0 +1,79 @@
+// @import url("https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap");
+// @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$baseSize: 10px;
+
+$font-12: 1.2rem;
+$font-14: 1.4rem;
+$font-16: 1.6rem;
+$font-18: 1.8rem;
+$font-21: 2.1rem;
+$font-24: 2.4rem;
+$font-28: 2.8rem;
+$font-30: 3rem;
+$font-35: 3.5rem;
+$font-40: 4rem;
+$font-50: 5rem;
+$font-90: 9rem;
+
+$font-lineHeight-12: 1.2rem;
+$font-lineHeight-14: 1.4rem;
+$font-lineHeight-16: 3.2rem;
+$font-lineHeight-18: 2.19rem;
+$font-lineHeight-21: 2.56rem;
+$font-lineHeight-24: 2.926rem;
+$font-lineHeight-28: 2.8rem;
+$font-lineHeight-30: 3rem;
+$font-lineHeight-35: 3.5rem;
+$font-lineHeight-40: 8rem;
+$font-lineHeight-50: 6.095rem;
+$font-lineHeight-90: 9rem;
+
+@mixin font12() {
+  font-size: $font-12;
+  line-height: $font-lineHeight-12;
+}
+@mixin font14() {
+  font-size: $font-14;
+  line-height: $font-lineHeight-14;
+}
+@mixin font16() {
+  font-size: $font-16;
+  line-height: $font-lineHeight-16;
+}
+@mixin font18() {
+  font-size: $font-18;
+  line-height: $font-lineHeight-18;
+}
+@mixin font21() {
+  font-size: $font-21;
+  line-height: $font-lineHeight-21;
+}
+@mixin font24() {
+  font-size: $font-24;
+  line-height: $font-lineHeight-24;
+}
+@mixin font28() {
+  font-size: $font-28;
+  line-height: $font-lineHeight-28;
+}
+@mixin font30() {
+  font-size: $font-30;
+  line-height: $font-lineHeight-30;
+}
+@mixin font35() {
+  font-size: $font-35;
+  line-height: $font-lineHeight-35;
+}
+@mixin font40() {
+  font-size: $font-40;
+  line-height: $font-lineHeight-40;
+}
+@mixin font50() {
+  font-size: $font-50;
+  line-height: $font-lineHeight-50;
+}
+@mixin font90() {
+  font-size: $font-90;
+  line-height: $font-lineHeight-90;
+}

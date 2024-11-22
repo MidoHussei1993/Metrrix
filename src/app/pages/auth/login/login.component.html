@@ -1,0 +1,129 @@
+<!-- <app-simple-header /> -->
+<div class=" flex justify-center items-center min-h-screen">
+  <section
+  class="bg-white p-8 rounded-lg shadow-md w-full max-w-md "
+>
+  <h1 class="mb-[.7rem] text-center text-[2rem] font-semibold md:text-start">
+    {{ "Login" | translate }}
+  </h1>
+  <form
+    class="login-form flex flex-col gap-[6px] text-[1rem]"
+    [formGroup]="loginForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <fieldset
+      class="email group mb-[3px] flex w-full flex-col gap-[3px]"
+    >
+      <label for="email" class="text-sm font-medium text-gray-700">
+        {{ "Email Address" | translate }}
+      </label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 "
+        placeholder="{{ 'email@domain.com' | translate }}"
+        formControlName="email"
+      />
+      @if (
+        loginForm.controls.email.invalid &&
+        (loginForm.controls.email.touched || loginForm.controls.email.dirty)
+      ) {
+        @if (loginForm.controls.email.errors?.["required"]) {
+          <small class="text-rose-700">{{
+            "Email address is a required field" | translate
+          }}</small>
+        }
+        @if (loginForm.controls.email.errors?.["email"]) {
+          <small class="text-rose-700">{{
+            "Please enter a valid email address" | translate
+          }}</small>
+        }
+      }
+      
+    </fieldset>
+    <fieldset class="password group flex w-full flex-col mb-4 ">
+      <label for="password" class="text-sm font-medium text-gray-700 mb-2">
+        {{ "Password" | translate }}
+      </label>
+      <input
+        [type]="passType"
+        name="password"
+        id="password"
+        class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        placeholder="{{ 'Password' | translate }}"
+        formControlName="password"
+      />
+      @if (isVisible) {
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          class="absolute end-[1.2rem]"
+          viewBox="0 0 256 256"
+          (click)="showPassword()"
+        >
+          <path
+            fill="#79797a"
+            class="group-hover:fill-[#2f2f2f] group-focus:fill-[#2f2f2f]"
+            d="M251 123.13c-.37-.81-9.13-20.26-28.48-39.61C196.63 57.67 164 44 128 44S59.37 57.67 33.51 83.52C14.16 102.87 5.4 122.32 5 123.13a12.08 12.08 0 0 0 0 9.75c.37.82 9.13 20.26 28.49 39.61C59.37 198.34 92 212 128 212s68.63-13.66 94.48-39.51c19.36-19.35 28.12-38.79 28.49-39.61a12.08 12.08 0 0 0 .03-9.75m-46.06 33C183.47 177.27 157.59 188 128 188s-55.47-10.73-76.91-31.88A130.4 130.4 0 0 1 29.52 128a130.5 130.5 0 0 1 21.57-28.11C72.54 78.73 98.41 68 128 68s55.46 10.73 76.91 31.89A130.4 130.4 0 0 1 226.48 128a130.5 130.5 0 0 1-21.57 28.12ZM128 84a44 44 0 1 0 44 44a44.05 44.05 0 0 0-44-44m0 64a20 20 0 1 1 20-20a20 20 0 0 1-20 20"
+          />
+        </svg>
+      } @else {
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          class="absolute end-[1.2rem]"
+          xmlns="http://www.w3.org/2000/svg"
+          (click)="showPassword()"
+        >
+          <g clip-path="url(#clip0_1_832)">
+            <path
+              d="M15.8806 7.48885C15.2365 6.09199 14.2931 4.85387 13.1172 3.86218L15.1386 1.84085L14.1952 0.896851L11.9999 3.09018C10.7848 2.38733 9.40359 2.02292 7.99991 2.03485C2.99991 2.03485 0.704581 6.20885 0.119247 7.48885C0.040673 7.66039 0 7.84684 0 8.03552C0 8.22419 0.040673 8.41065 0.119247 8.58218C0.763338 9.97904 1.70673 11.2172 2.88258 12.2089L0.861914 14.2302L1.80458 15.1729L3.99991 12.9795C5.21501 13.6824 6.59624 14.0468 7.99991 14.0349C12.9999 14.0349 15.2952 9.86085 15.8806 8.58085C15.959 8.40951 15.9996 8.22329 15.9996 8.03485C15.9996 7.84642 15.959 7.66019 15.8806 7.48885ZM1.33325 8.04218C1.83325 6.94552 3.79525 3.36818 7.99991 3.36818C9.04631 3.36207 10.079 3.60618 11.0119 4.08018L9.83525 5.25685C9.1952 4.83192 8.42785 4.64151 7.6634 4.71795C6.89895 4.79438 6.18449 5.13294 5.64125 5.67619C5.09801 6.21943 4.75944 6.93389 4.68301 7.69834C4.60658 8.46279 4.79698 9.23014 5.22191 9.87018L3.83591 11.2562C2.7695 10.3878 1.91383 9.2889 1.33325 8.04218ZM9.99991 8.03485C9.99991 8.56528 9.7892 9.07399 9.41413 9.44906C9.03906 9.82414 8.53035 10.0349 7.99991 10.0349C7.70292 10.0337 7.41005 9.96533 7.14325 9.83485L9.79991 7.17818C9.93039 7.44498 9.99876 7.73786 9.99991 8.03485ZM5.99991 8.03485C5.99991 7.50442 6.21063 6.99571 6.5857 6.62064C6.96077 6.24556 7.46948 6.03485 7.99991 6.03485C8.29691 6.036 8.58978 6.10438 8.85658 6.23485L6.19991 8.89152C6.06944 8.62472 6.00106 8.33184 5.99991 8.03485ZM7.99991 12.7015C6.95352 12.7076 5.92082 12.4635 4.98791 11.9895L6.16458 10.8129C6.80463 11.2378 7.57198 11.4282 8.33643 11.3518C9.10088 11.2753 9.81534 10.9368 10.3586 10.3935C10.9018 9.85027 11.2404 9.13581 11.3168 8.37136C11.3932 7.60691 11.2028 6.83956 10.7779 6.19952L12.1632 4.81418C13.2318 5.68339 14.0879 6.78489 14.6666 8.03485C14.1572 9.13952 12.1946 12.7015 7.99991 12.7015Z"
+              fill="#79797A"
+              class="group-hover:fill-[#2f2f2f] group-focus:fill-[#2f2f2f]"
+            />
+          </g>
+          <defs>
+            <clipPath id="clip0_1_832">
+              <rect
+                width="16"
+                height="16"
+                fill="white"
+                transform="translate(0 0.03479)"
+              />
+            </clipPath>
+          </defs>
+        </svg>
+      } 
+      @if (
+        loginForm.controls.password.invalid &&
+        loginForm.controls.password.touched
+      ) {
+        @if (loginForm.controls.password.errors?.["required"]) {
+          <small class="text-rose-700">{{
+            "Password is a required field" | translate
+          }}</small>
+        }
+
+      }
+    </fieldset>
+   
+    <button
+      type="submit"
+      [disabled]="isLoading"
+      class="w-full cursor-pointer bg-slate-800 py-[5px] text-[20px] text-white transition-all hover:text-orange disabled:cursor-default disabled:text-white  "
+    >
+      @if (isLoading) {
+        <i class="fa-solid fa-spinner fa-spin mx-2"></i>
+      }
+     Login
+    </button>
+    
+  </form>
+  
+</section>
+
+</div>

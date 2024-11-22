@@ -1,0 +1,91 @@
+<div class="card">
+    <div class="w-full">
+        <div class=" user-info-card">
+            <div class="card-header">
+                <div class="user-img" style="background-image:url('/images/user.png')"></div>
+            </div>
+            <div class=" p-2">
+                <div class="user-info block">
+                    <h6 class="font-bold text-[16px] text-[--color-blue-700] my-2">Mohammad Abdullah</h6>
+                    <p class="mb-2 text-[--color-gray-100] text-[12px]">Sr.Project Manager</p>
+                </div>
+                <div class="text-center card-links">
+                    <button type="button" class="custom-btn bg-[--color-blue-200] mr-1">Message</button>
+                    <button type="button" class="custom-btn bg-[--color-light-green-100] ml-1">follow</button>
+                    <div class="">
+                        <ul class="flex  justify-center w-full gap-4 mt-3 mb-2">
+                            <li>
+                                <a class="user-icons-link" href="#" title="Inbox">
+                                    <img src="/images/inbox-icon.svg">
+                                    <span class="badge notefications-icon">2</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="user-icons-link" href="#" title="Notifications">
+                                    <img src="/images/noti-icon.svg">
+                                    <span class="badge notefications-icon">4</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="user-icons-link" href="#" title="Tasks">
+                                    <img src="/images/tasks-icon.svg">
+                                </a>
+                            </li>
+                            <li>
+                                <a class="user-icons-link" href="#" title="Collaborations">
+                                    <img src="/images/collaborations-icon.svg">
+                                </a>
+                            </li>
+                            <li>
+                                <a class="user-icons-link" href="#" title="Sign out">
+                                    <img src="/images/logout-icon.svg">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="user-info-summery p-2">
+                <div class="card flex justify-content-center">
+                    <p-accordion [value]="activeTab">
+                        <p-accordion-panel value="0">
+                            <p-accordion-header>
+                                <ng-template #toggleicon let-active="active">
+                                    @if (active) {
+                                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                        <i class="fa"></i>
+                                    } @else {
+                                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+
+                                    }
+                                </ng-template>
+                                <span class="flex items-center gap-2 w-full">
+                                     <span class=" whitespace-nowrap">Amy Elsner</span>
+                                 </span>
+                            </p-accordion-header>
+                            <p-accordion-content>
+                                <p class="m-0">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                                    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                                    laborum.
+                                </p>
+                            </p-accordion-content>
+                        </p-accordion-panel> 
+                    </p-accordion>
+                </div>
+            </div>
+            <hr>
+            <div class="info-comp p-2">
+                <p class="text-[--color-gray-250] text-[13px]">Info compilation</p>
+                <div class="d-flex mb-1 min-h-[15px]">
+                   
+                    <progress id="file" value="32" max="100" class="w-full rounded h-[7px]" style="border-radius: 3px;"> 32% </progress>
+                </div>
+                <a class=" block text-[12px] text-right text-[--color-blue-200] " href="user-profile.html">update user info <i class="fas fa-chevron-right ml-1"></i></a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="p-3 bg-[{{data().cardBackgroundColor}}] tasks mb-2 rounded-[6px] mt-3">
+    <div class="flex justify-between items-center">
+        <div class="flex flex-1">
+            <div class="inbox-icon text-center mr-3">
+                <img class="mt-1" src="/images/{{data().img}}">
+            </div>
+            <div class="inbox-text flex-fill">
+                <h6 class="font-bold text-[13px] text-[--color-blue-700]">{{data().title}}</h6>
+                <p class=" text-[13px] text-[--color-gray-300]">{{data().description}}</p>
+            </div>
+        </div>
+        <div>
+            <div class="font-bold text-[15px] mt-1 text-[{{data().countColor}}] " data-count="45">{{data().count}}</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,169 @@
+.closeBtn {
+	&:focus {
+		outline: none;
+	}
+}
+.close {
+	color: gray;
+}
+.wrapper {
+	position: relative;
+	margin: 0 auto;
+	overflow: hidden;
+	height: 51px;
+}
+.list {
+	position: absolute;
+	left: 0px;
+	top:14px;
+	min-width: 3500px;
+	margin-top: 0px;
+	li {
+		display: table-cell;
+		position: relative;
+		text-align: center;
+		cursor: grab;
+		cursor: -webkit-grab;
+		color: #efefef;
+		vertical-align: middle;
+	}
+}
+.scroller {
+	text-align: center;
+	cursor: pointer;
+	display: none;
+	white-space: no-wrap;
+	vertical-align: middle;
+	background-color: #fff;
+	height: 51px;
+	padding: 0px 5px;
+	position: absolute;
+	z-index: 99;
+	i {
+		line-height: 51px !important;
+		color: #576A7C;
+	}
+}
+.scroller-right {
+	right: 24px;
+	top: 0px;
+}
+.scroller-left {
+	left: 0px;
+	top: 0px;
+}
+.gridster {
+	&.custom-style {
+		background-color: transparent !important;
+		padding: 0px !important;
+	}
+}
+.dynamic-tabs {
+	.nav-item {
+		position: relative;
+		text-transform: uppercase;
+		font-size: 13px;
+		font-weight: bold;
+		color: #576A7C;
+		padding: 1rem 1rem 0.6rem 1rem;
+		i {
+			&.action {
+				position: absolute;
+				font-size: 9px;
+				top: 0px;
+				right: 0px;
+				cursor: pointer;
+				background-color: #9CA8B3;
+				padding: 4px;
+				text-align: center;
+				border-radius: 180px;
+				color: #ffffff;
+				text-shadow: none !important;
+				opacity: 1 !important;
+				height: 18px;
+				width: 18px;
+				display: none;
+				transition: all 200ms ease-in;
+				transform: scale(1);
+			}
+			&.close {
+				&:hover {
+					background-color: #C4514E;
+				}
+			}
+			&.edit {
+				right: 25px;
+				&:hover {
+					background-color: #4B88BC;
+				}
+			}
+			&.roles {
+				right: 52px;
+				&:hover {
+					background-color: #1BC5BD;
+				}
+			}
+		}
+		&:hover {
+			i {
+				&.action {
+					display: block;
+				}
+			}
+		}
+	}
+	&.nav-tabs {
+		border-bottom: 0px !important;
+	}
+}
+.dynamic-tabs.nav-tabs .nav-item.show .nav-link, .dynamic-tabs.nav-tabs .nav-link.active {
+	color: #4B88BC;
+	background-color: transparent;
+	border-color: transparent;
+	border-bottom: 3px solid #4B88BC;
+}
+.dynamic-tabs-container {
+	border: 1px dashed #64747D;
+	border-radius: 6px;
+}
+.tab-txt[contenteditable=true] {
+	border: 1px solid #708790;
+}
+#btn-add-tab {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	background-color: #39AFD1;
+	color: #ffffff;
+	text-align: center;
+	cursor: pointer;
+	vertical-align: middle;
+	height: 51px;
+	padding: 0px 5px;
+	z-index: 99;
+	transition: all 200ms ease-in;
+	transform: scale(1);
+	&:hover {
+		background-color: #1BC5BD;
+	}
+	i {
+		line-height: 48px !important;
+	}
+}
+.m-h-0px {
+	min-height: 0px;
+}
+.add-card-gridster {
+	&:hover {
+		background-color: rgba(255, 255, 255, 0.4);
+	}
+}
+.delete-button, .manage-card-btn, .manage-st-card-btn {
+	cursor: pointer;
+}
+.inbox-icon {
+	img {
+		margin: 0 auto;
+		height: 26px;
+	}
+}

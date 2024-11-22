@@ -1,0 +1,12 @@
+@use "../public/scss/abstract/" as *;
+@use "../public/scss/base/" as *;
+@use "../public/scss/components/input" as *;
+@use 'sass:meta';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-color: var(--color-blue-100);
+}
