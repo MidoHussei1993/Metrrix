@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
     preset: Aura,
     options: {
         prefix: 'p',
-        darkModeSelector: 'system',
+        darkModeSelector: 'off',
         cssLayer: false
     }
   });

@@ -10,7 +10,7 @@ import { HttpClient, provideHttpClient, withInterceptors } from '@angular/common
 import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { sharedProviders } from './shared/shared.providers';
-import { authInterceptor, loadingInterceptor } from './core/http/interceptros';
+import { authInterceptor, loadingInterceptor, MessageInterceptor } from './core/http/interceptros';
 
 // Translation loader
 export function HttpLoaderFactory(http: HttpClient) {
@@ -20,7 +20,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 export const appConfig: ApplicationConfig = {
   providers: [
     ...sharedProviders,
-    provideHttpClient(withInterceptors([ loadingInterceptor, authInterceptor])),
+    provideHttpClient(withInterceptors([ loadingInterceptor, authInterceptor,MessageInterceptor])),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideAnimationsAsync(),

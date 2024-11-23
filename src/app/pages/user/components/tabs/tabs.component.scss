@@ -167,3 +167,16 @@
 		height: 26px;
 	}
 }
+.drawer-header{
+    background: url(../../../../../../public/images/profile-card-bg.svg), #1bc5bd;
+    background-size: cover;
+}
+
+::ng-deep{
+    .p-drawer-content{
+        padding-inline: 0px !important;
+    }
+    .p-drawer-header{
+        display: none !important;
+    }
+}
