@@ -3,6 +3,8 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent,SidebarComponent } from "./layout/ui"
 import { TranslationService } from './core/services/translation.service';
 import { IUser } from './layout/types/user';
+import { PrimeNG } from 'primeng/config';
+import Aura from '@primeng/themes/aura';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +17,18 @@ export class AppComponent implements OnInit {
   title = 'Mohamed-Hussein';
   private translationService = inject(TranslationService)
   user!: IUser
+
+  constructor(private config: PrimeNG) {
+    // Default theme configuration
+    this.config.theme.set({
+    preset: Aura,
+    options: {
+        prefix: 'p',
+        darkModeSelector: 'system',
+        cssLayer: false
+    }
+  });
+}
 
   ngOnInit(): void {
     this.translationService.setLanguage()
