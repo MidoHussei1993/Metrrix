@@ -11,6 +11,7 @@ import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { sharedProviders } from './shared/shared.providers';
 import { authInterceptor, loadingInterceptor, MessageInterceptor } from './core/http/interceptros';
+import { userModuleProviders } from './pages/user/store';
 
 // Translation loader
 export function HttpLoaderFactory(http: HttpClient) {
@@ -20,6 +21,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 export const appConfig: ApplicationConfig = {
   providers: [
     ...sharedProviders,
+    ...userModuleProviders,
     provideHttpClient(withInterceptors([ loadingInterceptor, authInterceptor,MessageInterceptor])),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),

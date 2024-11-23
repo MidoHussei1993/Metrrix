@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, input } from '@angular/core';
 import { InfoCardComponent } from '../info-card/info-card.component';
 import { DrawerModule } from 'primeng/drawer';
 import { CardInfo } from '@app/shared/types';
@@ -6,6 +6,7 @@ import { TranslationService } from '@app/core';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { FormsModule } from '@angular/forms';
 import { Select } from 'primeng/select';
+import { UserService } from '@app/pages/user/services';
 @Component({
   selector: 'app-list-info-card',
   standalone: true,
@@ -16,33 +17,10 @@ import { Select } from 'primeng/select';
 export class ListInfoCardComponent {
   translateService= inject(TranslationService)
   visible: boolean = false;
+  userServices = inject(UserService);
+  isView = input(false)
 
-  intialCardsValue:CardInfo[] = [
-    {
-      title: 'Projects',
-      value: 15,
-      img: 'st-projects.svg',
-      persona: '',
-      role: '',
-      color: '',
-    },
-    {
-      title: 'Object types',
-      value: 12,
-      img: '3d-model.svg',
-      persona: '',
-      role: '',
-      color: '',
-    },
-    {
-      title: 'Objects',
-      value: 112,
-      img: 'object-st.svg',
-      persona: '',
-      role: '',
-      color: '',
-    },
-  ];
+ 
   dataType: { title: string; value: number; img: string;id:number }[] = [
     {
       title: 'Projects',
@@ -126,7 +104,7 @@ export class ListInfoCardComponent {
     }
   };
   addNewInfoCard(){
-    this.intialCardsValue.push({
+    this.userServices.intialCardsValue.push({
       title: 'object name',
       value: 0,
       img: '3d-model.svg',
@@ -136,11 +114,11 @@ export class ListInfoCardComponent {
     })
   }
   removeInfoCard(index:number){
-    this.intialCardsValue.splice(index,1);
+    this.userServices.intialCardsValue.splice(index,1);
   }
   openDrawer(index:number){
     this.currentActiveCard = index;
-    this.cardInfo = {...this.intialCardsValue[index]};
+    this.cardInfo = {...this.userServices.intialCardsValue[index]};
     this.visible = true;
    }
   
@@ -149,9 +127,9 @@ export class ListInfoCardComponent {
     if(this.currentActiveCard == null) return
     const dataType = this.dataType.find((item) => item.title === this.cardInfo.title)
 
-    this.intialCardsValue[this.currentActiveCard] ={ ...this.cardInfo,
+    this.userServices.intialCardsValue[this.currentActiveCard] ={ ...this.cardInfo,
       ...dataType
     };
-    console.log("🚀 ~ ListInfoCardComponent ~ editCardSettings ~ this.intialCardsValue[this.currentActiveCard]:", this.intialCardsValue[this.currentActiveCard])
+    console.log("🚀 ~ ListInfoCardComponent ~ editCardSettings ~ this.intialCardsValue[this.currentActiveCard]:", this.userServices.intialCardsValue[this.currentActiveCard])
    }
 }

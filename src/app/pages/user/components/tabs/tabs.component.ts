@@ -1,9 +1,10 @@
 import { NgClass, NgIf } from '@angular/common';
-import { Component, inject, Signal, signal } from '@angular/core';
+import { Component, inject, input, InputSignal, output, Signal, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TranslationService } from '@app/core';
 import { DrawerModule } from 'primeng/drawer';
 import { MultiSelectModule } from 'primeng/multiselect';
+import { UserService } from '../../services';
 
 @Component({
   selector: 'app-tabs',
@@ -14,6 +15,8 @@ import { MultiSelectModule } from 'primeng/multiselect';
 })
 export class TabsComponent {
   translateService= inject(TranslationService)
+  isView:InputSignal<boolean>= input<boolean>(false);
+  activeTabAction = output<string>();
   visible: boolean = false;
   activeTabIndex:number = 0;
   EditedTab:number|null = null;
@@ -24,50 +27,7 @@ export class TabsComponent {
       role:[],
       personas:[]
   };
-  tabs:Signal<{title:string,icon?:string;role:any[];personas:any[]}[]> = signal<{title:string,icon?:string;role:any[];personas:any[]}[]>([
-    {
-      title:'user dashboard',
-      icon: 'fas fa-user',
-      role:[],
-      personas:[]
-    },
-    {
-      title:'Projects',
-      icon: 'fas fa-file-contract',
-      role:[],
-      personas:[]
-    },
-    {
-      title:'Projects',
-      icon: 'fas fa-cog',
-      role:[],
-      personas:[]
-    },
-    {
-      title:'responsibilities',
-      icon: 'fas fa-briefcase',
-      role:[],
-      personas:[]
-    },
-    {
-      title:'roles',
-      icon: 'fab fa-briefcase',
-      role:[],
-      personas:[]
-    },
-    {
-      title:'relations',
-      icon: 'fab fa-hubspot',
-      role:[],
-      personas:[]
-    },
-    {
-      title:'viewpoints',
-      icon: 'fas fa-th-large',
-      role:[],
-      personas:[]
-    },
-  ])
+ userServices = inject(UserService);
   Personas: { title: string; value: string }[] = [
     {
       title: 'Persona 1',
@@ -106,17 +66,17 @@ export class TabsComponent {
     },
   ];
   addTab(){
-    this.tabs().push({
+    this.userServices.tabs().push({
       title: 'New Tab',
       role:[],
       personas:[]
     })
   }
   deleteTab(index:number){
-    this.tabs().splice(index,1);
+    this.userServices.tabs().splice(index,1);
   }
   saveTabData(){
-    this.tabs()[this.EditedTabDataIndex!] = this.editTabData;
+    this.userServices.tabs()[this.EditedTabDataIndex!] = this.editTabData;
     this.visible = false;
   }
   smoothScroll(element: HTMLElement, targetPosition: number, duration: number) {

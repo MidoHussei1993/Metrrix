@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { IUser } from '@app/layout/types/user';
-import { HeaderComponent, SidebarComponent } from '@app/layout/ui';
+import { IUser } from '@app/layout/Type/user';
+import { HeaderComponent, HeaderMenuComponent, SidebarComponent } from '@app/layout/ui';
 
 @Component({
   selector: 'app-user',
   standalone: true,
-  imports: [HeaderComponent,SidebarComponent,RouterOutlet],
+  imports: [HeaderComponent,SidebarComponent,RouterOutlet,HeaderMenuComponent],
   templateUrl: './user.component.html',
   styleUrl: './user.component.scss'
 })

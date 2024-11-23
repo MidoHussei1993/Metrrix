@@ -4,7 +4,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { HeaderMenuComponent } from "../header-menu/header-menu.component";
 import { TranslationService } from '../../../core/services/translation.service';
 import { DatePipe, NgClass } from '@angular/common';
-import { IUser } from '../../types/user';
+import { IUser } from '../../Type/user';
 
 @Component({
   selector: 'app-header',
@@ -22,17 +22,15 @@ export class HeaderComponent {
   userNotifications: boolean = false
   listening: boolean = false
   translationService = inject(TranslationService)
-  loggedIn: boolean = false
+  loggedIn: boolean = true
 
   constructor() {
     this.toggleLanguage()
   }
 
-
   search(searchVal: string) {
     this.searching.emit(searchVal)
     console.log(searchVal);
-
   }
 
   toggleSpeachToText() {

@@ -1,1 +1,85 @@
-<p>==</p>
+<nav class="navigation">
+  <div class="menu__btn__bg">
+    <button class="menu__btn" #toggleBtn></button>
+  </div>
+  <ul class="menu"  [ngClass]="hideMenu ? 'hidden': '' ">
+    <li class="menu__item dash">
+      <button class="dash" title="Dashboard"></button>
+      <div class="menu__sub dash">
+        <p class="mendu__sub__haedline">{{ "Dashboard" | translate }}</p>
+        <div class="sub__links">
+          <a routerLink="/" class="sub__link">
+            <img
+              src="images/li-services-dashboards.svg"
+              alt="Services Dashboard"
+            />
+            <p>{{ "Services Dashboard" | translate }}</p>
+          </a>
+          <a routerLink="/" class="sub__link">
+            <img src="images/li-tasks.svg" alt="Tasks Dashboard" />
+            <p>{{ "Tasks Dashboard" | translate }}</p>
+          </a>
+        </div>
+      </div>
+    </li>
+    <li class="menu__item encyclo">
+      <button class="encyclo" title="Encyclopedias"></button>
+      <div class="menu__sub encyclo">
+        <p class="mendu__sub__haedline">{{ "Encyclopedias" | translate }}</p>
+        <div class="sub__links encyclo">
+          <a routerLink="/" class="sub__link">
+            <img src="images/li-tree.svg" alt="" />
+            <p>{{ "Metrix" | translate }}</p>
+          </a>
+          <a routerLink="/" class="sub__link">
+            <img src="images/li-services.svg" alt="" />
+            <p>{{ "Context" | translate }}</p>
+          </a>
+          <a routerLink="/" class="sub__link">
+            <img src="images/li-channels.svg" alt="" />
+            <p>{{ "Views" | translate }}</p>
+          </a>
+          <a routerLink="/" class="sub__link">
+            <img src="images/li-lows.svg" alt="" />
+            <p>{{ "Governance" | translate }}</p>
+          </a>
+        </div>
+      </div>
+    </li>
+    <li class="menu__item actions">
+      <button class="actions" title="My Actions"></button>
+    </li>
+    <li class="menu__item admin">
+      <button class="admin" title="User Management"></button>
+      <div class="menu__sub admin">
+        <p class="mendu__sub__haedline">{{ "Administration" | translate }}</p>
+        <div class="sub__links admin">
+          <a routerLink="/" class="sub__link">
+            <img src="images/li-General.svg" alt="" />
+            <p>{{ "General Settings" | translate }}</p>
+          </a>
+          <a routerLink="/" class="sub__link">
+            <img src="images/li-Context.svg" alt="" />
+            <p>{{ "Context Settings" | translate }}</p>
+          </a>
+          <a routerLink="/" class="sub__link">
+            <img src="images/li-Metrics.svg" alt="" />
+            <p>{{ "Metrics Settins" | translate }}</p>
+          </a>
+          <a routerLink="/" class="sub__link">
+            <img src="images/li-Templates.svg" alt="" />
+            <p>{{ "Template Settings" | translate }}</p>
+          </a>
+          <a routerLink="/" class="sub__link">
+            <img src="images/li-Surveys.svg" alt="" />
+            <p>{{ "Surveys Settings" | translate }}</p>
+          </a>
+          <a routerLink="/" class="sub__link">
+            <img src="images/li-Workflows.svg" alt="" />
+            <p>{{ "Workflows Settings" | translate }}</p>
+          </a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</nav>

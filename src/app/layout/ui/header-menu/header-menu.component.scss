@@ -1,0 +1,99 @@
+.navigation {
+  @apply fixed start-[9px] top-[17px] z-[5000];
+  .menu__btn {
+    @apply h-[35px] w-[35px] border-none outline-none text-center rounded-full bg-cover absolute;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    background-image: url(../../../../../public/images/menu.svg);
+    &::before {
+      @apply content-[""] rounded-full absolute inset-[-4px] m-auto  bg-[#abaeb778];
+      z-index: -1;
+    }
+  }
+
+  .menu {
+    @apply flex flex-col items-center absolute top-[50px];
+    
+    .menu__item {
+      @apply pb-[4px];
+      mask: 10;
+      button {
+        @apply h-[35px] w-[35px] bg-white rounded-full;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        &.dash {
+          background: url(../../../../../public/images/dashboard.svg) no-repeat;
+        }
+        &.encyclo {
+          background: url(../../../../../public/images/bussines.svg) no-repeat;
+        }
+        &.actions {
+          background: url(../../../../../public/images/tasks-managment.svg)
+            no-repeat;
+        }
+        &.admin {
+          background: url(../../../../../public/images/user-managment.svg)
+            no-repeat;
+        }
+      }
+      &:hover {
+        button {
+          animation: rotate 0.3s ease-in-out 0s 1 forwards normal;
+          & + .menu__sub {
+            display: block !important;
+          }
+        }
+      }
+    }
+    .menu__sub {
+      @apply hidden absolute top-0 start-[35px] bg-[#f0f0f0] rounded-[4px] w-[300px] min-h-[300px] border-l-[3px] border-solid uppercase;
+      box-shadow: 0px 0px 4px rgba(106, 150, 183, 0.1);
+      .mendu__sub__haedline {
+        @apply bg-white p-[10px] text-[13px] font-bold;
+      }
+      .sub__links {
+        @apply grid gap-[15px] p-[16px];
+        &.encyclo,
+        &.admin {
+          @apply grid-cols-2;
+        }
+        .sub__link {
+          @apply bg-white p-[16px] text-center rounded-[4px];
+          transition: all ease-in-out 0.3s;
+          img {
+            @apply w-[30px] h-[30px] mx-auto mb-[10px];
+          }
+          p {
+            @apply text-[12px];
+          }
+          &:hover {
+            scale: 1.05;
+            transition: all ease-in-out 0.3s;
+            img {
+              animation: rotate 0.3s ease-in-out 0s 1 forwards normal;
+            }
+          }
+        }
+      }
+      &.dash {
+        @apply border-[#F7A532];
+      }
+      &.encyclo {
+        @apply border-[#109AA4];
+      }
+      &.admin {
+        @apply border-[#B71E3E];
+      }
+      &:hover {
+        @apply block;
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}

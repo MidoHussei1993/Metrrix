@@ -7,7 +7,7 @@ import { UserComponent, UserProfileComponent, UserProfileViewComponent } from ".
         children: [
             {
                 path: '',
-                redirectTo: 'profile',
+                redirectTo: 'profile-view',
                 pathMatch: 'full'
             },
            {path: 'profile', component: UserProfileComponent},

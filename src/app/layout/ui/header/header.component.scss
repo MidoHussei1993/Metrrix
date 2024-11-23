@@ -1,5 +1,5 @@
 .header {
-  @apply border-t-4 py-[5px] border-[#007bff] border-solid flex items-center justify-between px-[64px] bg-white;
+  @apply border-t-4 py-[10px] border-[#007bff] border-solid flex items-center justify-between px-[64px] bg-white;
   .header__start{
     @apply flex;
     .header__logo img {
@@ -39,7 +39,7 @@
           }
         }
         .header__notifications__menu {
-          @apply absolute bg-white rounded-lg end-0 w-[240px] flex flex-col;
+          @apply absolute bg-white rounded-lg end-0 w-[240px] flex flex-col z-[100];
           .notifications__header {
             @apply uppercase text-[#384E64] text-[13px] font-bold text-center bg-[#e6ebec] rounded-tl-lg rounded-tr-lg leading-[31px];
           }
@@ -84,7 +84,7 @@
           }
         }
         ul {
-          @apply absolute rounded-[0.25rem] gap-0 top-full flex flex-col bg-white w-full py-[0.5rem] mt-[2px] border border-solid border-[#00000026];
+          @apply absolute rounded-[0.25rem] gap-0 top-full flex flex-col bg-white w-full py-[0.5rem] mt-[2px] border border-solid border-[#00000026] z-[100];
           li {
             @apply text-[#768791] text-[12px] w-full cursor-pointer py-[4px] whitespace-nowrap;
             a {

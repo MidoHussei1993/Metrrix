@@ -2,14 +2,14 @@ import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent,SidebarComponent } from "./layout/ui"
 import { TranslationService } from './core/services/translation.service';
-import { IUser } from './layout/types/user';
 import { PrimeNG } from 'primeng/config';
 import Aura from '@primeng/themes/aura';
+import { IUser } from './layout/Type/user';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, SidebarComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

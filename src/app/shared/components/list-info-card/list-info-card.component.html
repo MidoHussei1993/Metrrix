@@ -2,7 +2,7 @@
   <div
     class="grid xl:grid-cols-4 lg:grid-cols-4 md:gird-cols-2 grid-cols-1 gap-4"
   >
-    @for(cardData of intialCardsValue; track $index) {
+    @for(cardData of userServices.intialCardsValue; track $index) {
     <app-info-card
       [data]="cardData"
       [index]="$index"
@@ -11,15 +11,18 @@
     ></app-info-card>
     }
 
-    <div
-      class="border border-dashed flex flex-col items-center justify-between p-2 rounded-[6px] shadow-sm gap-2 py-3"
-      (click)="addNewInfoCard()"
-    >
-      <img class="block h-[40px]" src="/images/add-widget.svg" />
-      <h6 class="text-[14px] font-bold text-[--color-gray-250]">
-        Card settings
-      </h6>
-    </div>
+    @if(!isView){
+
+      <div
+        class="border border-dashed flex flex-col items-center justify-between p-2 rounded-[6px] shadow-sm gap-2 py-3"
+        (click)="addNewInfoCard()"
+      >
+        <img class="block h-[40px]" src="/images/add-widget.svg" />
+        <h6 class="text-[14px] font-bold text-[--color-gray-250]">
+          Card settings
+        </h6>
+      </div>
+    }
   </div>
 </div>
 
