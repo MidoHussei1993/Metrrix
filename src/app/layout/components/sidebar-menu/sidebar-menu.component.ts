@@ -2,11 +2,14 @@ import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { PanelMenu } from 'primeng/panelmenu';
 import { Router } from '@angular/router';
+import { AccordionModule } from 'primeng/accordion';
+import { AvatarModule } from 'primeng/avatar';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sidebar-menu',
   standalone: true,
-  imports: [PanelMenu,NgIf],
+  imports: [AccordionModule,TranslateModule,AvatarModule],
   templateUrl: './sidebar-menu.component.html',
   styleUrl: './sidebar-menu.component.scss'
 })
